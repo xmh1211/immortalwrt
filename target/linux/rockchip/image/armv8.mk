@@ -10,6 +10,15 @@ define Device/IfnameMigration
   DEVICE_COMPAT_MESSAGE := Network interface names have been changed
 endef
 
+define Device/hinlink_opc-h68k
+  DEVICE_VENDOR := HINLINK
+  DEVICE_MODEL := OPC-H68K
+  SOC := rk3568
+  BOOT_FLOW := pine64-img
+  DEVICE_PACKAGES := kmod-ata-ahci-dwc kmod-drm-rockchip kmod-hwmon-pwmfan kmod-mt7916-firmware kmod-r8125 wpad-openssl
+endef
+TARGET_DEVICES += hinlink_opc-h68k
+
 define Device/ariaboard_photonicat
   DEVICE_VENDOR := Ariaboard
   DEVICE_MODEL := Photonicat
