@@ -1,17 +1,16 @@
 #!/bin/bash
-
+# 修改路由器IP为192.168.100.1
 sed -i "s/$192.168.1.1/$192.168.100.1/g" package/base-files/files/bin/config_generate
-
+# 修改路由器主机名为X-WRT
 sed -i "s/$hostname='ImmortalWrt'/$hostname='X-WRT'/g" package/base-files/files/bin/config_generate
-
+# 修改时区为 CST-8
 sed -i "s/$timezone='UTC'/$timezone='CST-8'/g" package/base-files/files/bin/config_generate
-
 sed -i '/CST-8/a \\t\tset system.@system[-1].zonename='Asia/Shanghai'' package/base-files/files/bin/config_generate
-
+# 下载软件到 feeds 目录
 ./scripts/feeds update -a
-
+# 实际上是将 feeds 目录下的文件软链到 package/feeds 目录下的文件
 ./scripts/feeds install -a
-
+#导入自定义配置到默认配置文件里面
 echo '#
 # Automatically generated file; DO NOT EDIT.
 # ImmortalWrt Configuration
@@ -7962,21 +7961,14 @@ CONFIG_PACKAGE_ucode-mod-lua=y
 # CONFIG_PACKAGE_fontconfig is not set
 # end of Font-Utils
 # end of Xorg' >> .config
-
+#快速生成 .config 文件
 make defconfig
-
+#事先下载好要编译的软件包
 make download -j8 V=s
-
+#检查下载的软件包是否损坏，如果不完整就删除掉它。
 find dl -size -1024c -exec ls -l {} \;
-
 find dl -size -1024c -exec rm -f {} \;
-
-make download -j8 V=s
-
-find dl -size -1024c -exec ls -l {} \;
-
-find dl -size -1024c -exec rm -f {} \;
-
+#单线程编译
 make V=s -j1
 
 
