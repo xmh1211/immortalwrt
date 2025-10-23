@@ -222,6 +222,13 @@ define U-Boot/rk3568/Default
   TPL:=$(RK3568_TPL)
 endef
 
+define U-Boot/opc-h68k-rk3568
+  $(U-Boot/Default/rk3568)
+  NAME:=OPC-H68K
+  BUILD_DEVICES:= \
+    hinlink_opc-h68k
+endef
+
 define U-Boot/bpi-r2-pro-rk3568
   $(U-Boot/rk3568/Default)
   NAME:=Bananapi-R2 Pro
@@ -473,6 +480,7 @@ UBOOT_TARGETS := \
   radxa-cm3-io-rk3566 \
   radxa-zero-3-rk3566 \
   rock-3c-rk3566 \
+  opc-h68k-rk3568 \
   bpi-r2-pro-rk3568 \
   fastrhino-r66s-rk3568 \
   fastrhino-r68s-rk3568 \
