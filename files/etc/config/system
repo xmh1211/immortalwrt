@@ -1,0 +1,33 @@
+
+config system
+	option hostname 'X-WRT'
+	option timezone 'CST-8'
+	option zonename 'Asia/Shanghai'
+	option ttylogin '0'
+	option log_size '128'
+	option urandom_seed '0'
+	option log_proto 'udp'
+	option conloglevel '8'
+	option cronloglevel '7'
+	option zram_comp_algo 'lz4'
+
+config timeserver 'ntp'
+	list server 'time.apple.com'
+	list server 'time1.google.com'
+	list server 'time.cloudflare.com'
+	list server 'pool.ntp.org'
+
+config led 'led_wan'
+	option name 'WAN'
+	option sysfs 'blue:wan'
+	option trigger 'netdev'
+	option mode 'link tx rx'
+	option dev 'eth3'
+
+config led 'led_lan'
+	option name 'LAN'
+	option sysfs 'amber:lan'
+	option trigger 'netdev'
+	option mode 'link tx rx'
+	option dev 'br-lan'
+
