@@ -223,7 +223,7 @@ define U-Boot/rk3568/Default
 endef
 
 define U-Boot/opc-h68k-rk3568
-  $(U-Boot/Default/rk3568)
+  $(U-Boot/rk3568/Default)
   NAME:=OPC-H68K
   BUILD_DEVICES:= \
     hinlink_opc-h68k
