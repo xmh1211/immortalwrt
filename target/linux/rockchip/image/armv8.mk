@@ -62,10 +62,9 @@ define Device/IfnameMigration
 endef
 
 define Device/hinlink_opc-h68k
+  $(Device/rk3568)
   DEVICE_VENDOR := Hinlink
   DEVICE_MODEL := OPC-H68K
-  SOC := rk3568
-  BOOT_FLOW := pine64-img
   DEVICE_PACKAGES := kmod-ata-ahci-platform kmod-hwmon-pwmfan kmod-mt7916-firmware \
 	kmod-r8125 wpad-openssl
 endef
