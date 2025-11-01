@@ -16,8 +16,8 @@
 +#include "rk356x-base.dtsi"
 +
 +/ {
-+	model = "Generic RK3566/RK3568";
-+	compatible = "rockchip,rk3568";
++	model = "Hinlink OPC-H68K";
++	compatible = "hinlink,opc-h68k", "rockchip,rk3568";
 +
 +	aliases {
 +		mmc0 = &sdhci;
