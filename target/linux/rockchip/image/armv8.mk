@@ -245,6 +245,15 @@ define Device/friendlyarm_nanopi-r6c
 endef
 TARGET_DEVICES += friendlyarm_nanopi-r6c
 
+define Device/hinlink_opc-h68k
+  $(Device/rk3568)
+  DEVICE_VENDOR := Hinlink
+  DEVICE_MODEL := OPC-H68K
+  DEVICE_PACKAGES := kmod-ata-ahci-dwc kmod-drm-rockchip kmod-hwmon-pwmfan kmod-mt7916-firmware \
+	kmod-r8125 wpad-openssl
+endef
+TARGET_DEVICES += hinlink_opc-h68k
+
 define Device/friendlyarm_nanopi-r6s
   $(Device/rk3588s)
   DEVICE_VENDOR := FriendlyARM

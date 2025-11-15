@@ -222,6 +222,13 @@ define U-Boot/rk3568/Default
   TPL:=$(RK3568_TPL)
 endef
 
+define U-Boot/opc-h68k-rk3568
+  $(U-Boot/rk3568/Default)
+  NAME:=OPC-H68K
+  BUILD_DEVICES:= \
+    hinlink_opc-h68k
+endef
+
 define U-Boot/9tripod-x3568-v4-rk3568
   $(U-Boot/rk3568/Default)
   NAME:=9Tripod X3568 v4
@@ -466,6 +473,7 @@ define U-Boot/rock-5c-rk3588s
 endef
 
 UBOOT_TARGETS := \
+  opc-h68k-rk3568 \
   guangmiao-g4c-rk3399 \
   nanopc-t4-rk3399 \
   nanopi-r4s-rk3399 \
