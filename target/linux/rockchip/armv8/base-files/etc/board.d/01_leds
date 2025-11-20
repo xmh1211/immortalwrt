@@ -45,6 +45,10 @@ radxa,e52c)
 	ucidef_set_led_netdev "wan" "WAN" "green:wan" "wan"
 	ucidef_set_led_netdev "lan" "LAN" "green:lan" "lan"
 	;;
+hinlink,opc-h68k)
+	ucidef_set_led_netdev "wan" "WAN" "blue:net" "eth3"
+	ucidef_set_led_netdev "lan" "LAN" "green:work" "br-lan"
+	;;
 esac
 
 board_config_flush

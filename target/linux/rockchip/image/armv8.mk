@@ -67,6 +67,15 @@ define Device/IfnameMigration
   DEVICE_COMPAT_MESSAGE := Network interface names have been changed
 endef
 
+define Device/hinlink_opc-h68k
+  $(Device/rk3568)
+  DEVICE_VENDOR := HINLINK
+  DEVICE_MODEL := OPC-H68K
+  DEVICE_PACKAGES := kmod-ata-ahci-dwc kmod-drm-rockchip kmod-hwmon-pwmfan \
+  kmod-mt7916-firmware kmod-r8125 wpad-openssl
+endef
+TARGET_DEVICES += hinlink_opc-h68k
+
 define Device/9tripod_x3568-v4
   $(Device/rk3568)
   DEVICE_VENDOR := 9Tripod
