@@ -26,6 +26,10 @@ friendlyarm,nanopi-r5c)
 	ucidef_set_led_netdev "lan" "LAN" "green:lan" "eth0"
 	ucidef_set_led_netdev "wlan" "WLAN" "green:wlan" "phy0-ap0"
 	;;
+hinlink,opc-h68k)
+	ucidef_set_led_netdev "wan" "WAN" "blue:net" "eth3"
+	ucidef_set_led_netdev "lan" "LAN" "green:work" "br-lan"
+	;;
 friendlyarm,nanopi-r5s)
 	ucidef_set_led_netdev "wan" "WAN" "green:wan" "eth0"
 	ucidef_set_led_netdev "lan1" "LAN1" "green:lan-1" "eth1"

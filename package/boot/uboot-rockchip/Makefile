@@ -243,6 +243,13 @@ define U-Boot/fastrhino-r66s-rk3568
     lunzn_fastrhino-r66s
 endef
 
+define U-Boot/opc-h68k-rk3568
+  $(U-Boot/rk3568/Default)
+  NAME:=OPC-H68K
+  BUILD_DEVICES:= \
+    hinlink_opc-h68k
+endef
+
 define U-Boot/fastrhino-r68s-rk3568
   $(U-Boot/rk3568/Default)
   NAME:=FastRhino R68S
@@ -436,6 +443,7 @@ UBOOT_TARGETS := \
   9tripod-x3568-v4-rk3568 \
   bpi-r2-pro-rk3568 \
   fastrhino-r66s-rk3568 \
+  opc-h68k-rk3568 \
   fastrhino-r68s-rk3568 \
   lyt-t68m-rk3568 \
   mmbox-anas3035-rk3568 \
